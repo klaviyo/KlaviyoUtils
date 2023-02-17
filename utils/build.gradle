@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.klaviyo'
-version = '1.0.0'
+version = '1.0.1'
 
 android {
     compileSdkVersion 33
@@ -13,7 +13,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 33
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -32,9 +32,6 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.0"
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
 }
 
 afterEvaluate {
@@ -45,7 +42,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.klaviyo'
                 artifactId = 'klaviyo-utils'
-                version = '1.0.0'
+                version = '1.0.1'
             }
         }
     }
