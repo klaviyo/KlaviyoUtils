@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.github.klaviyo'
-version = '1.1.0'
+version = '1.1.1'
 
 android {
     compileSdkVersion 33
@@ -14,7 +14,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 33
         versionCode 1
-        versionName "1.1.0"
+        versionName version
     }
     buildTypes {
         release {
@@ -38,6 +38,7 @@ dependencies {
 task javadocJar(type: Jar) {
     dependsOn(dokkaJavadoc)
     archiveClassifier.set("javadoc")
+    from(dokkaJavadoc.outputDirectory)
 }
 
 afterEvaluate {
@@ -48,7 +49,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.klaviyo'
                 artifactId = 'klaviyo-utils'
-                version = '1.1.0'
+                version = version
                 artifact tasks.javadocJar
             }
         }
